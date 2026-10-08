@@ -76,3 +76,31 @@ Esta política está acordada; o workflow ainda não foi configurado.
 3. Definir se haverá registros pessoais fora do espaço compartilhado.
 4. Desenhar o fluxo mobile de início, novo lançamento e histórico.
 5. Planejar arquitetura, autenticação, isolamento dos espaços, backups e implantação antes de programar.
+
+
+## Fluxo de lançamento e edição — proposta
+
+**Status:** proposta de produto, ainda não implementada. Campos e permissões marcados como proposta precisam ser validados antes de virarem requisitos fechados.
+
+### Novo lançamento
+
+1. A pessoa toca em **Novo lançamento** na tela inicial ou no histórico.
+2. Abre uma única tela mobile, sem sequência de formulários. O teclado numérico facilita digitar o valor em reais.
+3. O tipo começa como **Despesa**; a pessoa pode alternar para **Renda**.
+4. A data começa como hoje. Categoria e descrição ficam opcionais na proposta, para manter o registro rápido.
+5. O espaço compartilhado aparece claramente selecionado; o lançamento não deve ser compartilhado sem que a pessoa saiba em qual espaço está registrando.
+6. Ao salvar, o item aparece no histórico com valor, tipo, data, categoria (se preenchida) e autor. Depois da confirmação do servidor, o resumo e o histórico compartilhado são atualizados.
+
+**Campos obrigatórios propostos:** valor e tipo. **Campos opcionais propostos:** categoria e descrição. **Data proposta:** hoje por padrão, editável.
+
+### Editar lançamento
+
+1. Tocar em um item do histórico abre seus detalhes e mostra quem o registrou.
+2. **Editar** abre o mesmo formulário preenchido com os dados atuais.
+3. Ao salvar, a mudança aparece para os membros do espaço; exibir quem editou e quando.
+4. A proposta é que qualquer membro possa editar qualquer lançamento do espaço, mantendo a autoria original e o registro da alteração. Essa permissão ainda precisa de confirmação.
+
+### Exclusão e falhas de conexão
+
+- A exclusão ainda não faz parte do fluxo definido. Se entrar no escopo, não deve ser silenciosa: pedir confirmação e deixar claro o efeito no histórico.
+- Se a conexão falhar, o app deve informar que o lançamento não foi sincronizado, em vez de dizer que já apareceu para a outra pessoa.
